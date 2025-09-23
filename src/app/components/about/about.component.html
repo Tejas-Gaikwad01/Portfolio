@@ -1,0 +1,43 @@
+<section class="about">
+  <h2>About me</h2>
+
+  <!-- Bio Card (full width) -->
+  <div class="card bio-card" [style.background]="gradients[2]">
+    <p class="bio">{{ bio }}</p>
+  </div>
+
+  <!-- Three-column layout -->
+  <div class="three-col">
+
+    <!-- Experience Card -->
+    <div class="card" [style.background]="gradients[1]">
+      <h3>Experience</h3>
+      <ul>
+        <li *ngFor="let exp of experience">
+          <strong>{{ exp.role }}</strong> at {{ exp.company }} {{ exp.Location }}  • {{ exp.duration }}
+          <p>{{ exp.description }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Education Card -->
+    <div class="card" [style.background]="gradients[0]">
+      <h3>Education</h3>
+      <ul>
+        <li *ngFor="let e of education">
+          <strong>{{ e.degree }}</strong>, {{ e.institute }} • {{ e.year }}
+          <span class="badge">CGPA: {{ e.CGPA }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Career Goals Card -->
+    <div class="card" [style.background]="gradients[0]">
+      <h3>Career Goals</h3>
+      <ul>
+        <li *ngFor="let g of goals">{{ g }}</li>
+      </ul>
+    </div>
+
+  </div>
+</section>

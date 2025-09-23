@@ -1,0 +1,107 @@
+/* Hero layout */
+.hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  width: 260px;
+  flex-shrink: 0;
+}
+
+/* Text styles */
+h1 {
+  font-size: 2.2rem;
+  margin: 0 0 0.5rem;
+}
+
+.accent { color: #1976d2; }
+
+.tagline {
+  color: #444;
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.intro {
+  color: #555;
+  line-height: 1.5;
+  max-width: 48ch;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-right: 0.6rem;
+}
+
+.primary { background: #1976d2; color: white; }
+.outline { border: 1px solid #1976d2; color: #1976d2; background: transparent; }
+
+/* Profile image */
+.profile {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* Mobile contact */
+.contact-mobile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.mobile-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.phone-number {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6391be;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Smooth fade/slide-in effect */
+.phone-number.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 880px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .right {
+    width: 180px;
+  }
+  .left {
+    order: 2;
+  }
+  .contact-mobile {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}

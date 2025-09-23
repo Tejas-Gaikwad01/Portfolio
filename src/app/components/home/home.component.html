@@ -1,0 +1,29 @@
+<section class="hero">
+  <div class="left">
+    <h1>Hi, I’m <span class="accent">{{name}}</span></h1>
+    <p class="tagline">{{tagline}}</p>
+    <p class="intro">
+      I build robust tools and apps — virtual file systems, backup utilities, and user authentication systems. I enjoy clean code and pragmatic solutions.
+    </p>
+
+    <!-- Hero CTA buttons -->
+    <div class="hero-cta">
+      <a routerLink="/projects" class="btn primary">See Projects</a>
+      <a [href]="resumePath" download class="btn outline">Download Résumé</a>
+    </div>
+
+    <!-- Mobile contact -->
+    <div class="contact-mobile">
+      <button (click)="toggleNumber()" class="mobile-btn">
+        <img src="assets/icons/mobile.svg" alt="Mobile" class="mobile-icon" />
+      </button>
+      <span *ngIf="showNumber" class="phone-number" [class.show]="showNumber">
+        +91 93227 23291 
+      </span>
+    </div>
+  </div>
+
+  <div class="right">
+    <img src="assets/profile.jpg" alt="Profile photo of Tejas" class="profile" loading="lazy">
+  </div>
+</section>

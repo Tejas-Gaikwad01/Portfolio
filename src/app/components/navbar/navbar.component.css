@@ -1,0 +1,57 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  align-items: center;       /* vertically center items */
+  justify-content: space-between;
+  background: hsl(197, 79%, 46%);
+  color: white;
+  padding: 0.5rem 1rem;     /* smaller padding */
+  height: 60px;             /* fixed height */
+  box-sizing: border-box;
+}
+
+/* Brand / Logo */
+.brand a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+.logo {
+  height: 34px;
+  width: 34px;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Resume button */
+.resume-btn {
+  background: #fff;
+  color: #1976d2;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,48 @@
+<section class="contact">
+  <h2>Contact</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <label>
+      <span>Name</span>
+      <input type="text" formControlName="name" />
+      <small class="error" *ngIf="form.get('name')?.touched && form.get('name')?.invalid">Name is required</small>
+    </label>
+
+    <label>
+      <span>Email</span>
+      <input type="email" formControlName="email" />
+      <small class="error" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">Enter a valid email</small>
+    </label>
+
+    <label>
+      <span>Message</span>
+      <textarea rows="6" formControlName="message"></textarea>
+      <small class="error" *ngIf="form.get('message')?.touched && form.get('message')?.invalid">Write at least 10 characters</small>
+    </label>
+
+    <div class="form-actions">
+      <button class="btn primary" type="submit" [disabled]="submitting">{{ submitting ? 'Sending...' : 'Send Message' }}</button>
+      <a class="btn outline" href="mailto:tejas.gaikwad20177@gmail.com">Email me</a>
+    </div>
+
+    <p class="form-msg" *ngIf="message">{{message}}</p>
+  </form>
+
+  <div class="social">
+  <h4>Or connect</h4>
+
+  <a href="https://www.linkedin.com/in/tejas-gaikwad-89b5122a3/" target="_blank" rel="noopener">
+    <img src="assets/icons/linkedin.svg" alt="LinkedIn" width="28" height="28">
+  </a>
+
+  <a href="https://github.com/Tejas-Gaikwad01" target="_blank" rel="noopener">
+    <img src="assets/icons/github.svg" alt="GitHub" width="24" height="24">
+  </a>
+
+  <!-- WhatsApp -->
+    <a href="https://wa.me/919322723291" target="_blank" rel="noopener">
+      <img src="assets/icons/whatsapp.svg" alt="WhatsApp" width="28" height="28">
+    </a>
+</div>
+
+</section>

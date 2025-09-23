@@ -1,0 +1,18 @@
+
+<section class="skills">
+  <h2>Skills</h2>
+  <div class="groups">
+    <div class="group" *ngFor="let g of skillGroups">
+      <h3>{{g.cat}}</h3>
+      <div *ngFor="let s of g.skills" class="skill">
+        <div class="skill-row">
+          <span class="skill-name">{{s.name}}</span>
+          <span class="skill-percent">{{s.level}}%</span>
+        </div>
+        <div class="progress" aria-hidden="true">
+          <div class="fill" [style.width.%]="s.level"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
