@@ -1,4 +1,5 @@
 <section class="hero">
+  <!-- Left Side -->
   <div class="left">
     <h1>Hi, I’m <span class="accent">{{name}}</span></h1>
     <p class="tagline">{{tagline}}</p>
@@ -9,21 +10,32 @@
     <!-- Hero CTA buttons -->
     <div class="hero-cta">
       <a routerLink="/projects" class="btn primary">See Projects</a>
-      <a [href]="resumePath" download class="btn outline">Download Résumé</a>
+      <a routerLink="/contact" class="btn secondary">Contact Me</a>
     </div>
 
-    <!-- Mobile contact -->
+    <!-- Contact Section -->
     <div class="contact-mobile">
-      <button (click)="toggleNumber()" class="mobile-btn">
+      <!-- Phone -->
+      <div class="contact-item">
         <img src="assets/icons/mobile.svg" alt="Mobile" class="mobile-icon" />
-      </button>
-      <span *ngIf="showNumber" class="phone-number" [class.show]="showNumber">
-        +91 93227 23291 
-      </span>
+        <span class="label">Call Us On</span>
+        <a [href]="'tel:' + phoneNumber" class="contact-link">{{ phoneNumber }}</a>
+      </div>
+
+      <!-- Email -->
+      <div class="contact-item">
+        <img src="assets/icons/email.svg" alt="Email" class="mobile-icon" />
+        <span class="label">Email Us</span>
+        <a [href]="'mailto:' + email" class="contact-link">{{ email }}</a>
+      </div>
     </div>
   </div>
 
+  <!-- Right Side (Profile Image) -->
   <div class="right">
-    <img src="assets/profile.jpg" alt="Profile photo of Tejas" class="profile" loading="lazy">
+    <img src="assets/profile.jpg" 
+         alt="Profile photo of Tejas" 
+         class="profile" 
+         loading="lazy">
   </div>
 </section>

@@ -6,34 +6,14 @@
   padding: 3rem 0;
 }
 
-.left {
-  flex: 1;
-}
-
-.right {
-  width: 260px;
-  flex-shrink: 0;
-}
+.left { flex: 1; }
+.right { width: 260px; flex-shrink: 0; }
 
 /* Text styles */
-h1 {
-  font-size: 2.2rem;
-  margin: 0 0 0.5rem;
-}
-
+h1 { font-size: 2.2rem; margin: 0 0 0.5rem; }
 .accent { color: #1976d2; }
-
-.tagline {
-  color: #444;
-  margin: 0 0 1rem;
-  font-weight: 600;
-}
-
-.intro {
-  color: #555;
-  line-height: 1.5;
-  max-width: 48ch;
-}
+.tagline { color: #444; margin: 0 0 1rem; font-weight: 600; }
+.intro { color: #555; line-height: 1.5; max-width: 48ch; }
 
 /* Buttons */
 .btn {
@@ -43,65 +23,63 @@ h1 {
   text-decoration: none;
   margin-right: 0.6rem;
 }
-
 .primary { background: #1976d2; color: white; }
-.outline { border: 1px solid #1976d2; color: #1976d2; background: transparent; }
+.btn.secondary { background: transparent; color: #1976d2; border: 2px solid #1976d2; }
+.btn.secondary:hover { background: #1976d2; color: white; }
 
-/* Profile image */
+/* Profile image with smooth hover rotation */
 .profile {
   width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transition: transform 1s ease-in-out;
+  cursor: pointer;
+}
+.profile:hover {
+  transform: rotateY(360deg);
 }
 
-/* Mobile contact */
+/* Contact section */
 .contact-mobile {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: column;   /* Stack vertically */
+  gap: 0.8rem;
   margin-top: 1.5rem;
 }
 
-.mobile-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .mobile-icon {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
 }
 
-.phone-number {
-  font-size: 1rem;
+.label {
   font-weight: 600;
-  color: #6391be;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: #333;
 }
 
-/* Smooth fade/slide-in effect */
-.phone-number.show {
-  opacity: 1;
-  transform: translateX(0);
+.contact-link {
+  color: #4119d296;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Responsive adjustments */
+.contact-link:hover {
+  color: #a10d0d;
+  text-decoration: underline;
+}
+
+/* Responsive */
 @media (max-width: 880px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  .right {
-    width: 180px;
-  }
-  .left {
-    order: 2;
-  }
-  .contact-mobile {
-    justify-content: center;
-    margin-top: 1rem;
-  }
+  .hero { flex-direction: column; text-align: center; }
+  .right { width: 180px; }
+  .left { order: 2; }
+  .contact-mobile { justify-content: center; margin-top: 1rem; }
 }

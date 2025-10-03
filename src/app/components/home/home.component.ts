@@ -1,5 +1,3 @@
-
-
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,12 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   name = 'Tejas Gaikwad';
-  tagline = 'Software Developer • C++  •Java • .NET • Angular';
+  tagline = 'Software Developer • ASP.NET • C++ • Java • Python • Angular';
   resumePath = 'assets/TEJAS_GAIKWAD_Resume_Resume.pdf';
 
-  showNumber = false;
-
-  toggleNumber() {
-    this.showNumber = !this.showNumber;
-  }
+  // Direct values for contact info
+  phoneNumber = '+91 93227 23291';
+  email = 'tejas.gaikwad20177@gmail.com';
 }

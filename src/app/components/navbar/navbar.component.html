@@ -6,7 +6,13 @@
     </a>
   </div>
 
-  <ul class="nav-links">
+  <!-- Hamburger button (only visible on mobile) -->
+  <button class="menu-toggle" (click)="isMenuOpen = !isMenuOpen">
+    ☰
+  </button>
+
+  <!-- Navigation links -->
+  <ul class="nav-links" [class.active]="isMenuOpen">
     <li>
       <a routerLink="/">
         <img src="assets/icons/home.svg" alt="Home" class="nav-icon" />
@@ -14,25 +20,26 @@
       </a>
     </li>
     <li>
-      <a routerLink="/about">
+       <a routerLink="/about" (click)="isMenuOpen = false">
         <img src="assets/icons/about.svg" alt="About" class="nav-icon" />
         About
       </a>
     </li>
+    
     <li>
-      <a routerLink="/skills">
+       <a routerLink="/skills" (click)="isMenuOpen = false">
         <img src="assets/icons/skills.svg" alt="Skills" class="nav-icon" />
         Skills
       </a>
     </li>
     <li>
-      <a routerLink="/projects">
+       <a routerLink="/projects" (click)="isMenuOpen = false">
         <img src="assets/icons/projects.svg" alt="Projects" class="nav-icon" />
         Projects
       </a>
     </li>
     <li>
-      <a routerLink="/contact">
+      <a routerLink="/contact" (click)="isMenuOpen = false">
         <img src="assets/icons/contact.svg" alt="Contact" class="nav-icon" />
         Contact
       </a>

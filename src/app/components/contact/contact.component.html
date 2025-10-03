@@ -4,26 +4,33 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
     <label>
       <span>Name</span>
-      <input type="text" formControlName="name" />
-      <small class="error" *ngIf="form.get('name')?.touched && form.get('name')?.invalid">Name is required</small>
+      <input type="text" formControlName="name" placeholder="Enter your name"/>
+      <small class="error" *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+    <span *ngIf="form.get('name')?.errors?.['required']">Name is required</span>
+    <span *ngIf="form.get('name')?.errors?.['pattern']">Name must contain letters only</span>
+    <span *ngIf="form.get('name')?.errors?.['minlength']">Name must be at least 3 characters</span>
+  </small>
     </label>
 
     <label>
       <span>Email</span>
-      <input type="email" formControlName="email" />
+      <input type="email" formControlName="email" placeholder="Enter your email"/>
       <small class="error" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">Enter a valid email</small>
     </label>
 
     <label>
       <span>Message</span>
-      <textarea rows="6" formControlName="message"></textarea>
-      <small class="error" *ngIf="form.get('message')?.touched && form.get('message')?.invalid">Write at least 10 characters</small>
+      <textarea rows="6" formControlName="message" placeholder="Enter your message"></textarea>
+      <small class="error" *ngIf="form.get('message')?.touched && form.get('message')?.invalid">
+        Write at least 5 characters
+      </small>
     </label>
+
 
     <div class="form-actions">
       <button class="btn primary" type="submit" [disabled]="submitting">{{ submitting ? 'Sending...' : 'Send Message' }}</button>
-      <a class="btn outline" href="mailto:tejas.gaikwad20177@gmail.com">Email me</a>
-    </div>
+      <!--<a class="btn outline" href="mailto:tejas.gaikwad20177@gmail.com">Email me</a> -->
+    </div> 
 
     <p class="form-msg" *ngIf="message">{{message}}</p>
   </form>
@@ -35,9 +42,9 @@
     <img src="assets/icons/linkedin.svg" alt="LinkedIn" width="28" height="28">
   </a>
 
-  <a href="https://github.com/Tejas-Gaikwad01" target="_blank" rel="noopener">
+  <!-- <a href="https://github.com/Tejas-Gaikwad01" target="_blank" rel="noopener">
     <img src="assets/icons/github.svg" alt="GitHub" width="24" height="24">
-  </a>
+  </a> -->
 
   <!-- WhatsApp -->
     <a href="https://wa.me/919322723291" target="_blank" rel="noopener">

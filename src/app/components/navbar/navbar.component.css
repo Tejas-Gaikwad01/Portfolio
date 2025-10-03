@@ -1,13 +1,14 @@
 /* Navbar container */
 .navbar {
   display: flex;
-  align-items: center;       /* vertically center items */
+  align-items: center;
   justify-content: space-between;
   background: hsl(197, 79%, 46%);
   color: white;
-  padding: 0.5rem 1rem;     /* smaller padding */
-  height: 60px;             /* fixed height */
+  padding: 0.5rem 1rem;
+  height: 60px;
   box-sizing: border-box;
+  position: relative;
 }
 
 /* Brand / Logo */
@@ -24,7 +25,7 @@
   width: 34px;
 }
 
-/* Navigation links */
+/* Navigation links (desktop) */
 .nav-links {
   display: flex;
   gap: 1rem;
@@ -54,4 +55,49 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
+}
+
+/* Hamburger menu (mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* show hamburger */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.8rem;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: hsl(197, 79%, 46%);
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    padding: 0 1rem;
+  }
+
+  .nav-links.active {
+    max-height: 300px; /* expand when active */
+    padding: 1rem;
+  }
+
+  .nav-links li {
+    text-align: right;
+  }
+
+  .resume-btn {
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
 }
