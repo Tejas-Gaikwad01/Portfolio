@@ -1,27 +1,55 @@
 import { Component } from '@angular/core';
 
+interface Skill { name: string; }
+interface SkillGroup { cat: string; icon: string; skills: Skill[]; }
+
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent {
-  skillGroups = [
-    { cat: 'Languages', skills: [
-      { name: 'C# / ASP.NET', level: 82 },
-      { name: 'C++', level: 88 },
-      { name: 'Java', level: 75 },
-      { name: 'Python', level: 70 }
-    ]},
-    { cat: 'Frontend', skills: [
-      { name: 'Angular', level: 76 },
-      { name: 'HTML/CSS', level: 80 },
-      { name: 'JavaScript', level: 70 }
-    ]},
-    { cat: 'Tools & DB', skills: [
-      { name: 'Git', level: 78 },
-      { name: 'SQL Server', level: 72 },
-      {name:'Postman',level:80}
-    ]}
+  skillGroups: SkillGroup[] = [
+    {
+      cat: 'Languages',
+      icon: '💻',
+      skills: [
+        { name: 'C#' },
+        { name: 'C++' },
+        { name: 'Java' },
+        { name: 'Python' }
+      ]
+    },
+    {
+      cat: 'Frontend',
+      icon: '🎨',
+      skills: [
+        { name: 'Angular' },
+        { name: '.NET MAUI' },
+        { name: 'HTML / CSS' },
+        { name: 'JavaScript' }
+        
+      ]
+    },
+    {
+      cat: 'Backend & APIs',
+      icon: '⚙️',
+      skills: [
+        { name: 'ASP.NET Core' },
+        { name: 'Web APIs (REST)' },
+        { name: 'Entity Framework' },
+        { name: 'SQL Server' },
+        { name: 'SQLite' }
+      ]
+    },
+    {
+      cat: 'Cloud & Tools',
+      icon: '☁️',
+      skills: [
+        { name: 'Azure Cloud' },
+        { name: 'Git / GitHub' },
+        { name: 'Postman' }
+      ]
+    }
   ];
 }

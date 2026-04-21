@@ -1,95 +1,309 @@
+/* ── Base ── */
 .about {
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.about h2 {
-  color: #1976d2; /* pick your preferred color */
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: center; /* optional */
-}
-
-.bio {
-  color: #fff;   /* white text for gradients */
-  max-width: 70ch;
+  padding: 4rem 2rem;
+  max-width: 1100px;
   margin: 0 auto;
-  line-height: 1.6;
-  font-size: 1.1rem;
-  text-align: center;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
-/* Three-column layout */
+/* ── Section Header ── */
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1976d2;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 0.8rem;
+}
+
+.header-line {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #1976d2, #5c6bc0);
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* ── Bio Card ── */
+.bio-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(25, 118, 210, 0.08);
+}
+
+.bio-avatar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1976d2, #5c6bc0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-initials {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.bio-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 0.5rem;
+}
+
+.bio-text {
+  color: #555;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.bio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  color: #1976d2;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* ── Three Column ── */
 .three-col {
   display: flex;
   gap: 1.5rem;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
-/* 🎨 Vibrant gradient cards */
+/* ── Cards ── */
 .card {
   flex: 1;
   min-width: 260px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* default gradient */
-  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Different gradients for variety */
-.card:nth-child(2) {
-  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  color: #333;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 32px rgba(25, 118, 210, 0.12);
+  border-color: #1976d2;
+}
+
+.card-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
 }
 
 .card h3 {
-  margin-top: 0;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 1.2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
 }
 
-.card ul {
-  margin: 0.6rem 0 0;
-  padding-left: 1.2rem;
-  list-style-type: disc; /* normal dots */
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.card ul li {
-  margin-bottom: 0.6rem;
-  line-height: 1.4;
+/* ── Experience Item ── */
+.exp-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-/* 🎓 Badge styling for CGPA */
-.badge {
+.exp-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.company-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #f8fafc;
+  padding: 4px;
+  border: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.exp-role {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.exp-company {
+  font-size: 0.82rem;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.exp-location {
+  font-size: 0.78rem;
+  color: #888;
+}
+
+.duration-badge {
   display: inline-block;
-  margin-left: 0.6rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.2); /* semi-transparent on gradient */
-  color: #fff;
-  font-size: 0.85rem;
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  color: #1976d2;
+  font-size: 0.75rem;
   font-weight: 600;
-  backdrop-filter: blur(4px);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  width: fit-content;
 }
 
+.exp-desc {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Education Item ── */
+.edu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.edu-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.edu-degree {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.edu-institute {
+  font-size: 0.83rem;
+  color: #555;
+}
+
+.edu-footer {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.year-badge,
+.cgpa-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+
+.year-badge {
+  background: #ede7f6;
+  border: 1px solid #ce93d8;
+  color: #7b1fa2;
+}
+
+.cgpa-badge {
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  color: #2e7d32;
+}
+
+/* ── Goals Item ── */
+.goal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.goal-number {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #1976d2;
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.goal-text {
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* ── Responsive ── */
 @media (max-width: 820px) {
-  .two-col {
+  .bio-card {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
   }
+
+  .bio-tags {
+    justify-content: center;
+  }
+
+  .three-col {
+    flex-direction: column;
+  }
+
   .card {
     width: 100%;
-    max-width: 480px;
   }
 }

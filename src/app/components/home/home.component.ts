@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   name = 'Tejas Gaikwad';
-  tagline = 'Software Developer • ASP.NET • C++ • Java • Python • Angular';
+  tagline = 'Software Developer • ASP.NET Core • .NET MAUI • C# • Angular • REST APIs';
   resumePath = 'assets/TEJAS_GAIKWAD_Resume_Resume.pdf';
 
   // Direct values for contact info

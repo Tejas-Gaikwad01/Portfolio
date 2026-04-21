@@ -1,41 +1,79 @@
 <section class="about">
-  <h2>About me</h2>
+  <div class="section-header">
+    <span class="section-label">Portfolio</span>
+    <h2>About Me</h2>
+    <div class="header-line"></div>
+  </div>
 
-  <!-- Bio Card (full width) -->
-  <div class="card bio-card" [style.background]="gradients[2]">
-    <p class="bio">{{ bio }}</p>
+  <!-- Bio Card -->
+  <div class="bio-card">
+    <div class="bio-avatar">
+      <span class="avatar-initials">SD</span>
+    </div>
+    <div class="bio-content">
+      <h3 class="bio-name">Software Developer</h3>
+      <p class="bio-text">{{ bio }}</p>
+      <div class="bio-tags">
+        <span class="tag">ASP.NET Core</span>
+        <span class="tag">Angular</span>
+        <span class="tag">Full-Stack</span>
+      </div>
+    </div>
   </div>
 
   <!-- Three-column layout -->
   <div class="three-col">
 
     <!-- Experience Card -->
-    <div class="card" [style.background]="gradients[1]">
+    <div class="card">
+      <div class="card-icon">💼</div>
       <h3>Experience</h3>
-      <ul>
-        <li *ngFor="let exp of experience">
-          <strong>{{ exp.role }}</strong> at {{ exp.company }} {{ exp.Location }}  • {{ exp.duration }}
-          <p>{{ exp.description }}</p>
+      <ul class="card-list">
+        <li *ngFor="let exp of experience" class="exp-item">
+          <div class="exp-header">
+            <img
+              class="company-logo"
+              [src]="exp.logoUrl"
+              [alt]="exp.company + ' logo'"
+              (error)="onLogoError($event)"
+            />
+            <div class="exp-meta">
+              <strong class="exp-role">{{ exp.role }}</strong>
+              <span class="exp-company">{{ exp.company }}</span>
+              <span class="exp-location">📍 {{ exp.location }}</span>
+            </div>
+          </div>
+          <span class="duration-badge">{{ exp.duration }}</span>
+          <p class="exp-desc">{{ exp.description }}</p>
         </li>
       </ul>
     </div>
 
     <!-- Education Card -->
-    <div class="card" [style.background]="gradients[0]">
+    <div class="card">
+      <div class="card-icon">🎓</div>
       <h3>Education</h3>
-      <ul>
-        <li *ngFor="let e of education">
-          <strong>{{ e.degree }}</strong>, {{ e.institute }} • {{ e.year }}
-          <span class="badge">CGPA: {{ e.CGPA }}</span>
+      <ul class="card-list">
+        <li *ngFor="let e of education" class="edu-item">
+          <strong class="edu-degree">{{ e.degree }}</strong>
+          <span class="edu-institute">{{ e.institute }}</span>
+          <div class="edu-footer">
+            <span class="year-badge">{{ e.year }}</span>
+            <span class="cgpa-badge">CGPA {{ e.CGPA }}</span>
+          </div>
         </li>
       </ul>
     </div>
 
     <!-- Career Goals Card -->
-    <div class="card" [style.background]="gradients[0]">
+    <div class="card">
+      <div class="card-icon">🎯</div>
       <h3>Career Goals</h3>
-      <ul>
-        <li *ngFor="let g of goals">{{ g }}</li>
+      <ul class="card-list goals-list">
+        <li *ngFor="let g of goals; let i = index" class="goal-item">
+          <span class="goal-number">0{{ i + 1 }}</span>
+          <span class="goal-text">{{ g }}</span>
+        </li>
       </ul>
     </div>
 

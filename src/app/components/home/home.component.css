@@ -75,6 +75,15 @@ h1 { font-size: 2.2rem; margin: 0 0 0.5rem; }
   color: #a10d0d;
   text-decoration: underline;
 }
+.current-role{
+  font-size: 1.1rem;
+  color: #555;
+  margin: 6px 0 12px;
+}
+
+.current-role strong{
+  color: #ff6b6b;
+}
 
 /* Responsive */
 @media (max-width: 880px) {
